@@ -13,43 +13,43 @@ public class CreateAnAccount {
 	static Logger log = Logger.getLogger(Signin.class.getName());
 	
 	public By createAnAccountErrorMsg = By.xpath("//*[@id='create_account_error']/ol/li");
-	WebElement mrRadionButton =  driver.findElement(By.xpath("//*[@id='id_gender1']")) ;
-	WebElement mrsRadioButton =  driver.findElement(By.xpath("//*[@id='id_gender2']")) ;
-	WebElement craeteAnAccoutn =  driver.findElement(By.xpath("//*[@id='noSlide']/h1"));
-	WebElement yourPersonalInfo =  driver.findElement(By.xpath("//*[@id='account-creation_form']/div[1]/h3"));
-	WebElement firstName =  driver.findElement(By.xpath("//*[@id='customer_firstname']"));
-	WebElement lastname =  driver.findElement(By.xpath("//*[@id='customer_lastname']"));
-	WebElement emailAddress =  driver.findElement(By.xpath("//*[@id='email']"));
-	WebElement password = driver.findElement(By.xpath("//*[@id='passwd']"));
-	WebElement days =  driver.findElement(By.xpath("//*[@id='days']"));
-	WebElement months =  driver.findElement(By.xpath("//*[@id='months']"));
-	WebElement year = driver.findElement(By.xpath("//*[@id='years']"));
-	WebElement signUpForOurNewsletter =  driver.findElement(By.xpath("//*[@id='newsletter']"));
-	WebElement receiveSpecialOffer =  driver.findElement(By.xpath("//*[@id='optin']"));
-	WebElement yourAddress =  driver.findElement(By.xpath("//*[@id='account-creation_form']/div[2]/h3"));
+	By mrRadionButton =  By.xpath("//*[@id='id_gender1']") ;
+	By mrsRadioButton =  By.xpath("//*[@id='id_gender2']") ;
+	By craeteAnAccoutn =  By.xpath("//*[@id='noSlide']/h1");
+	By yourPersonalInfo =  By.xpath("//*[@id='account-creation_form']/div[1]/h3");
+	By firstName =  By.xpath("//*[@id='customer_firstname']");
+	By lastname =  By.xpath("//*[@id='customer_lastname']");
+	By emailAddress =  By.xpath("//*[@id='email']");
+	By password = By.xpath("//*[@id='passwd']");
+	By days =  By.xpath("//*[@id='days']");
+	By months =  By.xpath("//*[@id='months']");
+	By year = By.xpath("//*[@id='years']");
+	By signUpForOurNewsletter =  By.xpath("//*[@id='newsletter']");
+	By receiveSpecialOffer =  By.xpath("//*[@id='optin']");
+	By yourAddress =  By.xpath("//*[@id='account-creation_form']/div[2]/h3");
 	
-	WebElement yourAddressFirstName =  driver.findElement(By.id("firstname"));
-	WebElement yourAddressLasstName =  driver.findElement(By.id("lastname"));
-	WebElement yourAddressCompany =  driver.findElement(By.id("firstname"));
-	WebElement yourAddressPrimary =  driver.findElement(By.id("address1"));
-	WebElement yourAddressSecondry =  driver.findElement(By.id("address2"));
-	WebElement yourAddressCity =  driver.findElement(By.id("city"));
-	WebElement yourAddressPostalCode =  driver.findElement(By.id("postcode"));
-	WebElement yourAddressStateDropDown = driver.findElement(By.xpath("//*[@id='id_state']"));
-	WebElement yourAddressCountryName = driver.findElement(By.xpath("//*[@id='id_country']"));
-	WebElement yourAddressPhoneNumber = driver.findElement(By.xpath("//*[@id='phone_mobile']"));
-	WebElement yourAddressAlias = driver.findElement(By.xpath("//*[@id='alias']"));
+	By yourAddressFirstName =  By.id("firstname");
+	By yourAddressLasstName =  By.id("lastname");
+	By yourAddressCompany =  By.id("firstname");
+	By yourAddressPrimary =  By.id("address1");
+	By yourAddressSecondry =  By.id("address2");
+	By yourAddressCity =  By.id("city");
+	By yourAddressPostalCode =  By.id("postcode");
+	By yourAddressStateDropDown = By.xpath("//*[@id='id_state']");
+	By yourAddressCountryName = By.xpath("//*[@id='id_country']");
+	By yourAddressPhoneNumber = By.xpath("//*[@id='phone_mobile']");
+	By yourAddressAlias = By.xpath("//*[@id='alias']");
 
 	public void selectMrRadioButton(){
 		log.info("Selecting Mr radio button");
-		mrRadionButton.click();
+		driver.findElement(mrRadionButton).click();
 		
 	}
 	
 	public boolean VerifyCreateAnAccountLabel(){
 		log.info("verifying Create An account label display on UI");
 		try{
-			craeteAnAccoutn.isDisplayed();
+			driver.findElement(craeteAnAccoutn).isDisplayed();
 			return true;
 		}
 		catch(Exception e){
@@ -59,12 +59,12 @@ public class CreateAnAccount {
 	}
 	public void firstName(String firstName){
 		log.info("Entering first Name");
-		this.firstName.sendKeys(firstName);
+		driver.findElement(this.firstName).sendKeys(firstName);
 	}
 	
 	public void selectDaysInDropDown(String day){
 		log.info("clicking on day from dropdown");
-		days.click();
+		driver.findElement(days).click();
 		String day1 = "/*[@id='days']/option[";
 		String day2 = "]";
 		log.info("Selecting day from dropdown");
@@ -73,7 +73,7 @@ public class CreateAnAccount {
 
 	public void selectMonthinDropdown(String Month){
 		log.info("clicking on month drop down");
-		months.click();
+		driver.findElement(months).click();
 		List<WebElement> monthsData = driver.findElements(By.xpath("//*[@id='months']/option"));
 		for(WebElement mon : monthsData){
 			//System.out.println(mon.getText());
