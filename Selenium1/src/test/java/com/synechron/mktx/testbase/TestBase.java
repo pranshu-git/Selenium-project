@@ -26,7 +26,7 @@ public class TestBase {
 
 	
 	 public void loadPropertiesFile() throws IOException {
-			f = new File(System.getProperty("user.dir") + "//src//test//java//com//companyname//projectname//config//config.properties");
+			f = new File(System.getProperty("user.dir") + "//src//test//java//com//synechron//mktx//config//config.properties");
 			FI = new FileInputStream(f);
 			Repository.load(FI);
 
@@ -56,4 +56,12 @@ public class TestBase {
 				}
 				return null;
 			}
+	 
+	 public void waitFor(int sec) throws InterruptedException {
+		 Thread.sleep(sec*1000);
+	 }
+	 
+	 public void closeBrowser(){
+		 driver.quit();
+	 }
 	}

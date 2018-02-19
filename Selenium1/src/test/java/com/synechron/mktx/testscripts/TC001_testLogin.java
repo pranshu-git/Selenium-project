@@ -2,7 +2,8 @@ package com.synechron.mktx.testscripts;
 
 import java.io.IOException;
 
-import org.junit.BeforeClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -13,7 +14,7 @@ import com.synechron.mktx.testbase.TestBase;
 public class TC001_testLogin extends TestBase{
 	Signin signin;//Reference of signin class
 	
-	@BeforeTest
+	@BeforeClass
 	public void SETUP() throws IOException{
 		System.out.println("init");
 		init();
@@ -23,13 +24,13 @@ public class TC001_testLogin extends TestBase{
 	public void testLogin(){
 		System.out.println("test");
 		signin = new Signin(driver);
-		signin.clickonSignIn();
-		signin.EntercreateAccEmailAdd("123@sd@.com");
+		signin.loginToApplication();
+		
 	}
 	
-	@AfterTest
+	@AfterClass
 	public void quitebrowser(){
-		
+		closeBrowser();
 	}
 	
 	

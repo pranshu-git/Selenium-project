@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.synechron.mktx.testscripts.TC001_testLogin">
+      <class name="com.synechron.mktx.testscripts.TC002_testLogin">
         <methods>
-          <include name="testLogin"/>
-          <include name="quitebrowser"/>
+          <include name="testRegistration"/>
+          <include name="SETUP"/>
         </methods>
-      </class> <!-- com.synechron.mktx.testscripts.TC001_testLogin -->
+      </class> <!-- com.synechron.mktx.testscripts.TC002_testLogin -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
